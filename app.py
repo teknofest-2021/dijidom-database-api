@@ -20,20 +20,25 @@ def pushDataToDatabase():
     Temperature     = dataList[5]
     Humidity        = dataList[6]
 
-    database.pushSoilData(plantID=PlantID,soilHumidity=SoilHumidity,
+    response = database.pushSoilData(plantID=PlantID,soilHumidity=SoilHumidity,
                         soilTemperature=SoilTemperature,measurementDate=MeasurementDate)
-    database.pushAmbientData(airQuality=AirQuality,temperature=Temperature,
+    response = database.pushAmbientData(airQuality=AirQuality,temperature=Temperature,
                             humidity=Humidity,measurementDate=MeasurementDate)
+
+    responseMessage = 'Could not write to database'
+    if(response==True):
+        responseMessage = 'Successfully written to database'
 
     return jsonify(
         {
-            'measurementDate'   :MeasurementDate,
-            'PlantID'           :PlantID,
-            'soilHumidity'      :SoilHumidity,
-            'soilTemperature'   :SoilTemperature,
-            'AirQuality'        :AirQuality,
-            'Temperature'       :Temperature,
-            'Humidity'          :Humidity
+            'measurementDate'   :   MeasurementDate,
+            'PlantID'           :   PlantID,
+            'soilHumidity'      :   SoilHumidity,
+            'soilTemperature'   :   SoilTemperature,
+            'AirQuality'        :   AirQuality,
+            'Temperature'       :   Temperature,
+            'Humidity'          :   Humidity,
+            'Database Message'  :   responseMessage
         }
     )
 
