@@ -3,8 +3,7 @@
 This repostory is about [DİJİ-DOM Database API](https://github.com/teknofest-2021/dijidom-database-api) and so the api will return
 JSON responses.
 
-Where full URLs are provided in responses they will be rendered as if service
-is running on 'http://194.31.79.154:6066/'.
+Where full URLs are provided in responses they will be rendered as if service is running on 'http://194.31.79.154:6066/'.
 
 ## Built with
 
@@ -18,7 +17,7 @@ Open endpoints require no Authentication.
 
 ### Similarity Rate Related
 
-Each endpoint manipulates or displays information related to the image which provided:
+Each endpoint manipulates or displays information related to dijidom database the which provided:
 
 * [pushDataToDatabase](readme/database/pushDataToDatabase.md) : `POST /api/database/pushDataToDatabase`
 
