@@ -20,7 +20,7 @@ def pushDataToDatabase():
     Temperature     = dataList[5]
     Humidity        = dataList[6]
 
-    response = database.pushSoilData(plantID=PlantID,soilHumidity=SoilHumidity,
+    response = database.pushSoilsData(plantID=PlantID,soilHumidity=SoilHumidity,
                         soilTemperature=SoilTemperature,measurementDate=MeasurementDate)
     response = database.pushAmbientsData(airQuality=AirQuality,temperature=Temperature,
                             humidity=Humidity,measurementDate=MeasurementDate)

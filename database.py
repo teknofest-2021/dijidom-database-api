@@ -30,7 +30,7 @@ def pushNewPlant(plantName,plantTypeID,plantingDate):
     except:
         return False
 
-def pushSoilData(plantID,soilHumidity,soilTemperature,measurementDate):
+def pushSoilsData(plantID,soilHumidity,soilTemperature,measurementDate):
     try:
         print('[INFO]--[pushSoilData]--[FUNCTION]')
         conn = psycopg2.connect(database = "DIJIDOM", user = "postgres", 
