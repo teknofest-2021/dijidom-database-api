@@ -8,7 +8,7 @@ app.config['ENV'] = 'development'
 
 @app.route('/api/database/pushDataToDatabase', methods=['POST'])
 def pushDataToDatabase():
-    print('[INFO]--[getImageBase64FromQR]--[FUNCTION]')
+    print('[INFO]--[pushDataToDatabase]--[FUNCTION]')
     stringData = request.form['stringData']
     dataList   = stringData.split('#')
 
@@ -22,7 +22,7 @@ def pushDataToDatabase():
 
     response = database.pushSoilData(plantID=PlantID,soilHumidity=SoilHumidity,
                         soilTemperature=SoilTemperature,measurementDate=MeasurementDate)
-    response = database.pushAmbientData(airQuality=AirQuality,temperature=Temperature,
+    response = database.pushAmbientsData(airQuality=AirQuality,temperature=Temperature,
                             humidity=Humidity,measurementDate=MeasurementDate)
 
     responseMessage = 'Could not write to database'
